@@ -11,7 +11,7 @@ state = {
   createContact = data => {
     console.log(data);
     this.setState(prevState => {
-      return { contacts: [data, ...prevState.contacts] };
+      return { contacts: [...prevState.contacts,data] };
     });
   };
   // handleChange = (e) => {
@@ -29,7 +29,7 @@ state = {
     return (
       <>
         <Form onClickSubmit={this.createContact} />
-      <h2>Contacts</h2>
+        <h2>Contacts</h2>
         <ContactList contacts={this.state.contacts} />
       </>
     )

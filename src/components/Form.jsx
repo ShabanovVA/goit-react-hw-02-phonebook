@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import React, { Component }  from 'react';
 
 export class Form extends Component{
@@ -9,7 +8,7 @@ export class Form extends Component{
   
       handleChange = (e) => {
     const { name, value } = e.currentTarget;
-    this.setState({ [name]:value, id:nanoid() })
+    this.setState({ [name]:value})
     };
     
     handleSubmit = (e) => {

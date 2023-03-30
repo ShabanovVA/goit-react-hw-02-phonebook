@@ -9,21 +9,10 @@ state = {
   }
   
   createContact = data => {
-    console.log(data);
     this.setState(prevState => {
       return { contacts: [...prevState.contacts,data] };
     });
   };
-  // handleChange = (e) => {
-  //   const { name, value } = e.currentTarget;
-  //   this.setState({ [name]:value })
-  // };
-
-  // handleSubmit = (e) => {
-  //   e.preventDefault()
-    // this.setState((prevState) => ({ contacts: [...prevState.contacts,this.state.name,this.state.number] }))  
-    // this.setState({ name: '', number:''});
-  // };
 
   render() {
     return (

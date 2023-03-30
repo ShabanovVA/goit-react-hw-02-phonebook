@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import React, { Component }  from 'react';
 
 export class Form extends Component{
@@ -8,7 +9,7 @@ export class Form extends Component{
   
       handleChange = (e) => {
     const { name, value } = e.currentTarget;
-    this.setState({ [name]:value})
+    this.setState({ [name]:value, id:nanoid() })
     };
     
     handleSubmit = (e) => {
@@ -52,16 +53,3 @@ export class Form extends Component{
       </form>);
     }
 }
-// import { nanoid } from "nanoid";
-
-// export const ContactList = ({ contacts }) => {
-//     return (
-//         <ul>Contacts:{contacts.map(contact => {
-//             console.log(contact)
-//             const {name, number } = contact;
-//             return (<li key={nanoid()}>
-//                 <p>{name}:{number}</p>
-//             </li>)
-//         })}</ul>
-//     )
-// }

@@ -1,11 +1,11 @@
 import { Component } from "react";
 import {Form} from "./Form";
-// import { ContactList } from "./ContactList";
+import { ContactList } from "./ContactList";
 export class App extends Component {
 state = {
   contacts: [],
-  // name: '',
-  // number: ''
+  name: '',
+  number: '',
   }
   
   createContact = data => {
@@ -27,9 +27,11 @@ state = {
 
   render() {
     return (
-      <><Form onClickSubmit={this.createContact} />
+      <>
+        <Form onClickSubmit={this.createContact} />
       <h2>Contacts</h2>
-      <p>{[this.state.contacts]}</p></>
+        <ContactList contacts={this.state.contacts} />
+      </>
     )
   }
 }

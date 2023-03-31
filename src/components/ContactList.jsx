@@ -7,8 +7,8 @@ export const ContactList = ({contacts}) => {
         const { id, name, number } = contact;
         return (
             <ContactItem
-                // key={nanoid()}
-            // id={id}
+            key={id}
+            id={id}
             name={name}
             number={number}>
             </ContactItem>

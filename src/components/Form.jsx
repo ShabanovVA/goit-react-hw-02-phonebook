@@ -14,6 +14,11 @@ export class Form extends Component{
     
     handleSubmit = (e) => {
       e.preventDefault();
+      
+      if (this.props.contacts.find(contact => contact.name.toLowerCase() === this.state.name.toLowerCase())) {
+        return alert(`${this.state.name} is already in contacts.`)
+      }
+
       this.props.onClickSubmit(this.state);
       this.reset();
   };
@@ -25,16 +30,16 @@ export class Form extends Component{
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleChange}
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
+              <label>
+                Name
+                <input
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                  name="name"
+                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                  required
           />
         </label>
         <label>

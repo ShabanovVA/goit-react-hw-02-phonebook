@@ -12,8 +12,6 @@ state = {
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
   ],
   filter: '',
-  // name: '',
-  // number: '',
   }
   
   createContact = (data) => {
@@ -32,14 +30,16 @@ state = {
   }
   render() {
     const filtredContacts = this.getFiltredContacts();
+    const { contacts, filter } = this.state;
 
     return (
-      <>
-        <Form onClickSubmit={this.createContact} />
-        <Filter valueFilter={this.state.filter} onChange={this.changeFilter} />
+      <div>
+        <h1>Phonebook</h1>
+        <Form onClickSubmit={this.createContact}  contacts={contacts} />
         <h2>Contacts</h2>
-        <ContactList contacts={filtredContacts} />
-      </>
+        <Filter valueFilter={filter} onChange={this.changeFilter} />
+        <ContactList contacts={filtredContacts}/>
+      </div>
     )
   }
 }

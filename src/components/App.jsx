@@ -1,7 +1,8 @@
 import { Component } from "react";
-import {Form} from "./Form";
-import { ContactList } from "./ContactList";
-import { Filter } from "./Filter";
+import {Form} from "./Form/Form";
+import { ContactList } from "./ContactList/ContactList";
+import { Filter } from "./Filter/Filter";
+import {Wrapper} from './App.styled';
 
 export class App extends Component {
 state = {
@@ -40,13 +41,13 @@ state = {
     const { contacts, filter } = this.state;
 
     return (
-      <div>
+      <Wrapper>
         <h1>Phonebook</h1>
         <Form onClickSubmit={this.createContact}  contacts={contacts} />
         <h2>Contacts</h2>
         <Filter valueFilter={filter} onChange={this.changeFilter} />
         <ContactList contacts={filtredContacts} onDeleteContact={this.deleteContact} />
-      </div>
+      </Wrapper>
     )
   }
 }

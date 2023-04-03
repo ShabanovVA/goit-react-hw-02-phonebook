@@ -2,7 +2,7 @@ import { Component } from "react";
 import {Form} from "./Form/Form";
 import { ContactList } from "./ContactList/ContactList";
 import { Filter } from "./Filter/Filter";
-import {Wrapper} from './App.styled';
+import {Wrapper, Title, TitleFilter} from './App.styled';
 
 export class App extends Component {
 state = {
@@ -42,9 +42,9 @@ state = {
 
     return (
       <Wrapper>
-        <h1>Phonebook</h1>
+        <Title>Phonebook</Title>
         <Form onClickSubmit={this.createContact}  contacts={contacts} />
-        <h2>Contacts</h2>
+        <TitleFilter>Contacts</TitleFilter>
         <Filter valueFilter={filter} onChange={this.changeFilter} />
         <ContactList contacts={filtredContacts} onDeleteContact={this.deleteContact} />
       </Wrapper>

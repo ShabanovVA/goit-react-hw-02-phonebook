@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { FilterFormInput, FilterLabel } from "./Filter.styled";
 
 export const Filter = ({valueFilter, onChange}) => (
 
-    <label>Фильтр
-        <input type='text' value={valueFilter} onChange={onChange} />
-    </label>
+    <FilterLabel>Фильтр
+        <FilterFormInput type='text' value={valueFilter} onChange={onChange} />
+    </FilterLabel>
 )
 
 export default Filter;  
